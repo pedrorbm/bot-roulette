@@ -455,67 +455,6 @@ const dozens3 = ['25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35
             }
         }
 
-        const autoRoulette = () => {
-            const rouletteNumber = [];
-            const rouletteName = []
-            let strategyDozens1 = 0
-            let strategyDozens2 = 0
-            let strategyDozens3 = 0
-            rouletteName.push(rouletteNames[27])
-            for (let index = 102; index < 107; index += 1) {
-                let array = rouletteNumbers[index]
-                rouletteNumber.push(array)
-                for (let indexx = 0; indexx < 12; indexx += 1) {
-                    if (array === dozens1[indexx]) {
-                        strategyDozens1 += 1;
-                    } else if (array === dozens2[indexx]) {
-                        strategyDozens2 += 1;
-                    } else if (array === dozens3[indexx]) {
-                        strategyDozens3 += 1;
-                    }
-                }
-            }
-
-            const site = 'https://livecasino.bet365.com/Play/SlingshotRoulette'
-
-            if (strategyDozens1 >= 5 || strategyDozens2 >= 5 || strategyDozens3 >= 5) {
-                return bot.telegram.sendMessage(-830628548, `${sinals}Bateu 5 dúzias Auto Roulette${sinals}\n\n` +
-                `${arrow}Acesse a sala: ${site}\n\n` +
-                `${bomb}Sequência: ${rouletteNumber}\n\n`)
-            }
-        }
-
-        const speedAutoRoulette = () => {
-            const rouletteNumber = [];
-            const rouletteName = []
-            let strategyDozens1 = 0
-            let strategyDozens2 = 0
-            let strategyDozens3 = 0
-            rouletteName.push(rouletteNames[28])
-            for (let index = 108; index < 113; index += 1) {
-                let array = rouletteNumbers[index]
-                rouletteNumber.push(array)
-                for (let indexx = 0; indexx < 12; indexx += 1) {
-                    if (array === dozens1[indexx]) {
-                        strategyDozens1 += 1;
-                    } else if (array === dozens2[indexx]) {
-                        strategyDozens2 += 1;
-                    } else if (array === dozens3[indexx]) {
-                        strategyDozens3 += 1;
-                    }
-                }
-            }
-
-            const site = 'https://livecasino.bet365.com/Play/PrimeSlingshot'
-
-            if (strategyDozens1 >= 5 || strategyDozens2 >= 5 || strategyDozens3 >= 5) {
-                return bot.telegram.sendMessage(-830628548, `${sinals}Bateu 5 dúzias Speed Auto Roulette${sinals}\n\n` +
-                `${arrow}Acesse a sala: ${site}\n\n` +
-                `${bomb}Sequência: ${rouletteNumber}\n\n`)
-            }
-        }
-
-
         console.log('foi')
         bet365Roulette();
         roulette();
@@ -531,14 +470,8 @@ const dozens3 = ['25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35
         ukRoulette();
         bucharestRoulette();
         rouletteItaliana();
-        autoRoulette();
-        speedAutoRoulette();
-
-
 
         await context.close();
         await browser.close();
 
     })()
-
-
